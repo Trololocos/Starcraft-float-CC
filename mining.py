@@ -1,12 +1,9 @@
-#Parameters
-workers = 16 
-patchNum = 4 
-CCtravelTime = 40 #In seconds
 #Found on liquipedia, the mining rates of workers
 normal = 40
 overs = 20
-
-CCtravelTime /= 60
+workers = int(input("How many workers? "))
+patchNum = int(input("How many mineral patches? "))
+CCtravelTime = int(input("how many seconds does the CC take? ")) / 60
 def calcRate(workers, patchNum):
     patches = [0] * patchNum
     rate = 0
