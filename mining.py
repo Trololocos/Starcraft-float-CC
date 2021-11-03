@@ -1,8 +1,10 @@
+#Parameters
+workers = 16 
+patchNum = 4 
+CCtravelTime = 40 #In seconds
+#Found on liquipedia, the mining rates of workers
 normal = 40
 overs = 20
-workers = 16
-patchNum = 4
-CCtravelTime = 40 # seconds
 
 CCtravelTime /= 60
 def calcRate(workers, patchNum):
