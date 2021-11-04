@@ -3,7 +3,7 @@ normal = 40
 overs = 20
 workers = int(input("How many workers? "))
 patchNum = int(input("How many mineral patches? "))
-CCtravelTime = int(input("how many seconds does the CC take? ")) / 60
+CCtravelTime = int(input("how many seconds does the CC take to fly to a new base? ")) / 60
 def calcRate(workers, patchNum):
     patches = [0] * patchNum
     rate = 0
@@ -34,9 +34,16 @@ current = calcRate(workers, patchNum)
 future = calcRate(workers, 8)
 cost = round(current * CCtravelTime)
 delta = future-current
-worthIt = (cost / delta) #+ CCtravelTime
+try:
+    worthIt = (cost / delta) #+ CCtravelTime
+except:
+    print("No gain")
+    input("")
+    exit()
+    
 
 print(f"""rate is {current} minerals per minute
 Future rate is {future} minerals per minute
 The cost of flying is {cost} minerals
 You will recuperate the investment in {round(worthIt * 60)} seconds.""")
+input("")
